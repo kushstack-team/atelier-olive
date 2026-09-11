@@ -54,7 +54,7 @@ const Capabilities = () => {
             ))}
           </div>
           <div className="capabilities-image-wrapper">
-            <img src="/2.webp" alt="Atelier Olive Capabilities" className="capabilities-image" />
+            <img src="/7.webp" alt="Atelier Olive Capabilities" className="capabilities-image" />
             <div className="image-caption">B2B UPHOLSTERY &amp; OFFICE FURNITURE</div>
           </div>
         </div>

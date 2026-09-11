@@ -16,7 +16,7 @@ const Hero = () => {
     <section className="hero-section">
       <div className="hero-background">
         <img 
-          src="/1.webp" 
+          src="/background.jpg" 
           alt="Atelier Olive Furniture Manufacturing" 
           className="hero-image"
           style={{ transform: `translateY(${scrollY * 0.2}px)` }}
