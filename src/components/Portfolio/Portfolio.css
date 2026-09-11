@@ -1,0 +1,114 @@
+.portfolio-section {
+  background-color: var(--bg-secondary);
+  padding-bottom: calc(var(--spacing-xl) * 1.5);
+}
+
+.portfolio-header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.gallery-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.gallery-row-wide {
+  width: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  group: item;
+}
+
+.image-wrapper {
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.gallery-item.large .image-wrapper {
+  height: 800px;
+}
+
+.gallery-item.stacked .image-wrapper {
+  height: calc(400px - (var(--spacing-md) / 2));
+}
+
+.gallery-item.wide .image-wrapper {
+  height: 600px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--bg-primary);
+  background: rgba(28, 28, 26, 0.4);
+  padding: 0.5rem 1rem;
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition-fast);
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item.large .image-wrapper,
+  .gallery-item.stacked .image-wrapper,
+  .gallery-item.wide .image-wrapper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item.large .image-wrapper,
+  .gallery-item.stacked .image-wrapper,
+  .gallery-item.wide .image-wrapper {
+    height: 300px;
+  }
+  
+  .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+    bottom: 1rem;
+    left: 1rem;
+  }
+}
